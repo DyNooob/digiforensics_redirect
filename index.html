@@ -11,10 +11,16 @@
             box-sizing: border-box;
         }
 
-        /* 全屏背景修复 */
-        html, body {
+        /* 强制全屏 + 禁止滚动 + 百分百铺满 */
+        html {
             width: 100%;
             height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
             font-family: "SF Mono", "Monaco", "Consolas", "Courier New", monospace;
             background-color: #0a0e1a;
             color: #e2e8f0;
@@ -23,10 +29,9 @@
             justify-content: center;
             padding: 20px;
             position: relative;
-            overflow: hidden;
         }
 
-        /* 全屏动态科技背景（丰富版） */
+        /* 终极全屏背景 */
         .code-bg {
             position: fixed;
             top: 0;
@@ -187,7 +192,6 @@
 </head>
 <body>
 
-    <!-- 全屏科技背景 -->
     <div class="code-bg" id="codeBg"></div>
 
     <div class="container">
@@ -216,7 +220,6 @@
     </div>
 
     <script>
-        // 丰富的电子取证专业代码背景
         const codeList = [
             "DIGITAL_FORENSICS", "EVIDENCE_ANALYSIS", "FILE_RECOVERY",
             "SHA256", "MD5", "CRC32", "MFT_PARSE", "NTFS_ANALYSIS",
