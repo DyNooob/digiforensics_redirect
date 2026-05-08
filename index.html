@@ -11,9 +11,10 @@
             box-sizing: border-box;
         }
 
-        /* 极简深色科技基底 */
-        body {
-            min-height: 100vh;
+        /* 全屏背景修复 */
+        html, body {
+            width: 100%;
+            height: 100%;
             font-family: "SF Mono", "Monaco", "Consolas", "Courier New", monospace;
             background-color: #0a0e1a;
             color: #e2e8f0;
@@ -25,21 +26,22 @@
             overflow: hidden;
         }
 
-        /* 【电子取证细节1】背景低透明度代码流 */
+        /* 全屏动态科技背景（丰富版） */
         .code-bg {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            font-size: 12px;
-            line-height: 1.8;
-            color: #1e3a5f;
-            opacity: 0.4;
-            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            font-size: 13px;
+            line-height: 2;
+            color: #253b5a;
+            opacity: 0.5;
             z-index: 0;
             pointer-events: none;
             word-break: break-all;
+            white-space: pre-wrap;
+            overflow: hidden;
         }
 
         /* 核心内容容器 */
@@ -52,13 +54,12 @@
             border: 1px solid rgba(34, 197, 94, 0.2);
             border-radius: 4px;
             background: rgba(10, 14, 26, 0.95);
-            /* 极简电路板纹理阴影 */
             box-shadow: 
                 0 0 0 1px rgba(34, 197, 94, 0.05),
                 0 20px 60px rgba(0, 0, 0, 0.5);
         }
 
-        /* 【电子取证细节2】终端提示符风格标题 */
+        /* 标题区域 */
         .header {
             margin-bottom: 40px;
         }
@@ -88,7 +89,7 @@
             color: #94a3b8;
         }
 
-        /* 【亮度提升】信息块文字更清晰 */
+        /* 内容文字 */
         .info-block {
             margin-bottom: 50px;
             padding: 24px;
@@ -99,13 +100,12 @@
             color: #cbd5e1;
         }
 
-        /* 【修改】去掉高亮的code样式，融入文本 */
         .info-block .highlight {
             color: #ffffff;
             font-weight: 600;
         }
 
-        /* 【电子取证细节4】命令行风格按钮 */
+        /* 跳转按钮 */
         .action-btn {
             display: inline-flex;
             align-items: center;
@@ -121,8 +121,6 @@
             text-decoration: none;
             cursor: pointer;
             transition: all 0.2s ease;
-            position: relative;
-            overflow: hidden;
         }
 
         .action-btn::before {
@@ -134,7 +132,6 @@
 
         .action-btn:hover {
             background: rgba(34, 197, 94, 0.1);
-            color: #4ade80;
             border-color: #4ade80;
         }
 
@@ -142,7 +139,7 @@
             opacity: 1;
         }
 
-        /* 【亮度提升】底部状态条更清晰 */
+        /* 状态条 */
         .status-bar {
             margin-top: 30px;
             padding-top: 20px;
@@ -169,7 +166,7 @@
             50% { opacity: 0.3; }
         }
 
-        /* 【亮度提升】版权信息更清晰 */
+        /* 版权 */
         .copyright {
             text-align: center;
             font-size: 12px;
@@ -177,7 +174,7 @@
             line-height: 1.5;
         }
 
-        /* 移动端适配 */
+        /* 移动端 */
         @media (max-width: 480px) {
             .container {
                 padding: 40px 24px;
@@ -189,54 +186,52 @@
     </style>
 </head>
 <body>
-    <!-- 背景代码流 -->
+
+    <!-- 全屏科技背景 -->
     <div class="code-bg" id="codeBg"></div>
 
     <div class="container">
-        <!-- 终端风格标题 -->
         <div class="header">
             <div class="prompt">Preparing connection...</div>
             <h1 class="brand-name">DigiForensics</h1>
             <p class="brand-tagline">电子取证学习与刷题平台</p>
         </div>
 
-        <!-- 【修改】更温润的文案 -->
         <div class="info-block">
             欢迎来到 <span class="highlight">DigiForensics</span> 的入口站。<br><br>
             我们已为您建立好安全通道，请点击下方按钮，<br>
             即可前往专业的电子取证学习世界。
         </div>
 
-        <!-- 【修改】更温和的按钮文案 -->
         <a href="https://www.digiforensics.cn" class="action-btn">前往学习平台</a>
 
-        <!-- 底部状态条 -->
         <div class="status-bar">
             <span><span class="status-dot"></span>Connection Secure</span>
             <span>Ready</span>
         </div>
 
-        <!-- 版权信息 -->
         <div class="copyright">
             &copy; 2026 DigiForensics.cn | 电子取证.com. All rights reserved.
         </div>
     </div>
 
     <script>
-        // 简单的背景代码流生成
-        const codeSnippets = [
-            "import forensics", "load evidence.img", "hash.sha256()", 
-            "analyze.mft()", "recover.files()", "connect.db", 
-            "scan.network", "decode.base64()", "check.integrity",
-            "0x7F4A9C", "01001101", "for (i=0; i<len; i++)"
+        // 丰富的电子取证专业代码背景
+        const codeList = [
+            "DIGITAL_FORENSICS", "EVIDENCE_ANALYSIS", "FILE_RECOVERY",
+            "SHA256", "MD5", "CRC32", "MFT_PARSE", "NTFS_ANALYSIS",
+            "NETWORK_CAPTURE", "LOG_ANALYSIS", "MEMORY_DUMP", "DELETED_FILE",
+            "BASE64_DECODE", "HEX_VIEW", "DISK_IMAGING", "CHAIN_OF_CUSTODY",
+            "0x00 0x01 0x02 0x03 0x04 0x05", "0x10 0x20 0x40 0x80",
+            "forensic.log", "evidence.img", "case_001", "timeline_analysis"
         ];
 
-        const codeBg = document.getElementById('codeBg');
-        let content = '';
-        for (let i = 0; i < 200; i++) {
-            content += codeSnippets[Math.floor(Math.random() * codeSnippets.length)] + '   ';
+        const bg = document.getElementById('codeBg');
+        let text = '';
+        for(let i=0; i<300; i++){
+            text += codeList[Math.floor(Math.random()*codeList.length)] + "   ";
         }
-        codeBg.textContent = content;
+        bg.innerText = text;
     </script>
 </body>
 </html>
