@@ -64,15 +64,15 @@
         }
 
         .prompt {
-            color: #22c55e;
+            color: #4ade80;
             font-size: 14px;
             margin-bottom: 12px;
-            opacity: 0.8;
+            opacity: 1;
         }
 
         .prompt::before {
             content: "// ";
-            color: #64748b;
+            color: #94a3b8;
         }
 
         .brand-name {
@@ -85,24 +85,24 @@
 
         .brand-tagline {
             font-size: 14px;
-            color: #64748b;
+            color: #94a3b8;
         }
 
-        /* 【修改】更柔和的信息块，去掉突兀的蓝 */
+        /* 【亮度提升】信息块文字更清晰 */
         .info-block {
             margin-bottom: 50px;
             padding: 24px;
             background: rgba(255, 255, 255, 0.03);
             border-left: 2px solid rgba(255, 255, 255, 0.1);
-            font-size: 14px;
+            font-size: 15px;
             line-height: 1.8;
-            color: #94a3b8;
+            color: #cbd5e1;
         }
 
         /* 【修改】去掉高亮的code样式，融入文本 */
         .info-block .highlight {
-            color: #e2e8f0;
-            font-weight: 500;
+            color: #ffffff;
+            font-weight: 600;
         }
 
         /* 【电子取证细节4】命令行风格按钮 */
@@ -114,7 +114,7 @@
             height: 52px;
             background: transparent;
             border: 1px solid #22c55e;
-            color: #22c55e;
+            color: #4ade80;
             font-family: inherit;
             font-size: 15px;
             font-weight: 600;
@@ -142,7 +142,7 @@
             opacity: 1;
         }
 
-        /* 底部状态条 */
+        /* 【亮度提升】底部状态条更清晰 */
         .status-bar {
             margin-top: 30px;
             padding-top: 20px;
@@ -150,7 +150,8 @@
             display: flex;
             justify-content: space-between;
             font-size: 12px;
-            color: #475569;
+            color: #94a3b8;
+            margin-bottom: 12px;
         }
 
         .status-dot {
@@ -158,7 +159,7 @@
             width: 6px;
             height: 6px;
             border-radius: 50%;
-            background: #22c55e;
+            background: #4ade80;
             margin-right: 6px;
             animation: blink 2s infinite;
         }
@@ -166,6 +167,14 @@
         @keyframes blink {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.3; }
+        }
+
+        /* 【亮度提升】版权信息更清晰 */
+        .copyright {
+            text-align: center;
+            font-size: 12px;
+            color: #64748b;
+            line-height: 1.5;
         }
 
         /* 移动端适配 */
@@ -205,6 +214,11 @@
         <div class="status-bar">
             <span><span class="status-dot"></span>Connection Secure</span>
             <span>Ready</span>
+        </div>
+
+        <!-- 版权信息 -->
+        <div class="copyright">
+            &copy; 2026 DigiForensics.cn | 电子取证.com. All rights reserved.
         </div>
     </div>
 
