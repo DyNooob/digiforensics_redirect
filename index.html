@@ -2,240 +2,97 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://www.xn--torv7ogqxztu.com">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigiForensics | 电子取证平台</title>
+    <meta http-equiv="refresh" content="5;url=https://www.xn--torv7ogqxztu.com">
+    <title>安全验证中</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
         }
-
-        /* 强制全屏 + 禁止滚动 + 百分百铺满 */
-        html {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
         body {
-            width: 100%;
-            height: 100vh;
-            font-family: "SF Mono", "Monaco", "Consolas", "Courier New", monospace;
-            background-color: #0a0e1a;
-            color: #e2e8f0;
+            background-color: #f5f7fa;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-            position: relative;
-        }
-
-        /* 终极全屏背景 */
-        .code-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
             height: 100vh;
-            font-size: 13px;
-            line-height: 2;
-            color: #253b5a;
-            opacity: 0.5;
-            z-index: 0;
-            pointer-events: none;
-            word-break: break-all;
-            white-space: pre-wrap;
-            overflow: hidden;
         }
-
-        /* 核心内容容器 */
-        .container {
-            position: relative;
-            z-index: 10;
-            width: 100%;
-            max-width: 520px;
-            padding: 60px 40px;
-            border: 1px solid rgba(34, 197, 94, 0.2);
-            border-radius: 4px;
-            background: rgba(10, 14, 26, 0.95);
-            box-shadow: 
-                0 0 0 1px rgba(34, 197, 94, 0.05),
-                0 20px 60px rgba(0, 0, 0, 0.5);
-        }
-
-        /* 标题区域 */
-        .header {
-            margin-bottom: 40px;
-        }
-
-        .prompt {
-            color: #4ade80;
-            font-size: 14px;
-            margin-bottom: 12px;
-            opacity: 1;
-        }
-
-        .prompt::before {
-            content: "// ";
-            color: #94a3b8;
-        }
-
-        .brand-name {
-            font-size: 32px;
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
-
-        .brand-tagline {
-            font-size: 14px;
-            color: #94a3b8;
-        }
-
-        /* 内容文字 */
-        .info-block {
-            margin-bottom: 50px;
-            padding: 24px;
-            background: rgba(255, 255, 255, 0.03);
-            border-left: 2px solid rgba(255, 255, 255, 0.1);
-            font-size: 15px;
-            line-height: 1.8;
-            color: #cbd5e1;
-        }
-
-        .info-block .highlight {
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        /* 跳转按钮 */
-        .action-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 52px;
-            background: transparent;
-            border: 1px solid #22c55e;
-            color: #4ade80;
-            font-family: inherit;
-            font-size: 15px;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .action-btn::before {
-            content: "→ ";
-            margin-right: 8px;
-            opacity: 0;
-            transition: opacity 0.2s ease;
-        }
-
-        .action-btn:hover {
-            background: rgba(34, 197, 94, 0.1);
-            border-color: #4ade80;
-        }
-
-        .action-btn:hover::before {
-            opacity: 1;
-        }
-
-        /* 状态条 */
-        .status-bar {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(100, 116, 139, 0.2);
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            color: #94a3b8;
-            margin-bottom: 12px;
-        }
-
-        .status-dot {
-            display: inline-block;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #4ade80;
-            margin-right: 6px;
-            animation: blink 2s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-
-        /* 版权 */
-        .copyright {
+        .box {
+            background: #fff;
+            width: 420px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,80,180,0.12);
             text-align: center;
-            font-size: 12px;
-            color: #64748b;
-            line-height: 1.5;
         }
-
-        /* 移动端 */
-        @media (max-width: 480px) {
-            .container {
-                padding: 40px 24px;
-            }
-            .brand-name {
-                font-size: 26px;
-            }
+        /* 旋转加载动画 */
+        .loader {
+            width: 56px;
+            height: 56px;
+            border: 5px solid #e6edf7;
+            border-top-color: #1677ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 24px;
+        }
+        @keyframes spin {
+            to {transform: rotate(360deg);}
+        }
+        h2 {
+            color: #1f2937;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+        .desc {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+        #count {
+            color: #1677ff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .link {
+            margin-top: 26px;
+            font-size: 14px;
+            color: #888;
+        }
+        .link a {
+            color: #1677ff;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
-
-    <div class="code-bg" id="codeBg"></div>
-
-    <div class="container">
-        <div class="header">
-            <div class="prompt">Preparing connection...</div>
-            <h1 class="brand-name">DigiForensics</h1>
-            <p class="brand-tagline">电子取证学习与刷题平台</p>
-        </div>
-
-        <div class="info-block">
-            欢迎来到 <span class="highlight">DigiForensics</span> 的入口站。<br><br>
-            我们已为您建立好安全通道，请点击下方按钮，<br>
-            即可前往专业的电子取证学习世界。
-        </div>
-
-        <a href="https://www.digiforensics.cn" class="action-btn">前往学习平台</a>
-
-        <div class="status-bar">
-            <span><span class="status-dot"></span>Connection Secure</span>
-            <span>Ready</span>
-        </div>
-
-        <div class="copyright">
-            &copy; 2026 DigiForensics.cn | 电子取证.com. All rights reserved.
+    <div class="box">
+        <div class="loader"></div>
+        <h2>正在进行安全验证</h2>
+        <p class="desc">系统校验访问环境安全，验证通过后自动跳转</p>
+        <p id="count">剩余 5 秒</p>
+        <div class="link">
+            若长时间无响应，请<a href="https://xn--torv7ogqxztu.com">点击此处手动访问</a>
         </div>
     </div>
+    <div class="copyright">
+            &copy; 2026 DigiForensics.cn | 电子取证.com. All rights reserved.
+        </div>
 
     <script>
-        const codeList = [
-            "DIGITAL_FORENSICS", "EVIDENCE_ANALYSIS", "FILE_RECOVERY",
-            "SHA256", "MD5", "CRC32", "MFT_PARSE", "NTFS_ANALYSIS",
-            "NETWORK_CAPTURE", "LOG_ANALYSIS", "MEMORY_DUMP", "DELETED_FILE",
-            "BASE64_DECODE", "HEX_VIEW", "DISK_IMAGING", "CHAIN_OF_CUSTODY",
-            "0x00 0x01 0x02 0x03 0x04 0x05", "0x10 0x20 0x40 0x80",
-            "forensic.log", "evidence.img", "case_001", "timeline_analysis"
-        ];
+        let time = 5;
+        const targetUrl = "https://xn--torv7ogqxztu.com";
+        const countDom = document.getElementById("count");
 
-        const bg = document.getElementById('codeBg');
-        let text = '';
-        for(let i=0; i<300; i++){
-            text += codeList[Math.floor(Math.random()*codeList.length)] + "   ";
-        }
-        bg.innerText = text;
+        const timer = setInterval(() => {
+            time--;
+            countDom.innerText = `剩余 ${time} 秒`;
+            if (time <= 0) {
+                clearInterval(timer);
+                window.location.href = targetUrl;
+            }
+        }, 1000);
     </script>
 </body>
 </html>
